@@ -2,6 +2,27 @@
 # 📁 Collection: Auth 
 
 
+### Welcome to the Chall DOT API documentation!
+### Made with ❤️ by Hafis Rabbani
+### Pattern: Controller-Service-Repository (CSR) Pattern
+
+Menggunakan pola (pattern) Controller-Service-Repository dalam pengembangan aplikasi web memiliki banyak manfaat, di antaranya:
+
+1. Memisahkan kode ke dalam lapisan yang terpisah: Dengan memisahkan kode ke dalam lapisan terpisah, struktur aplikasi menjadi lebih teratur dan mudah dipelihara. Controller bertanggung jawab untuk menangani request dan memberikan respon, Service bertanggung jawab untuk logika bisnis, dan Repository bertanggung jawab untuk mengakses data.
+
+2. Menjaga pemisahan antara logika bisnis dan akses data: Dengan memisahkan kode ke dalam lapisan terpisah, logika bisnis tidak tercampur dengan logika akses data. Dalam Service, developer dapat menulis logika bisnis tanpa memikirkan bagaimana data diambil atau disimpan. Dalam Repository, developer dapat menulis kode untuk mengambil atau menyimpan data tanpa memikirkan bagaimana data tersebut akan digunakan.
+
+3. Memudahkan dalam pengujian: Memisahkan kode ke dalam lapisan terpisah membuat pengujian menjadi lebih mudah. Dalam Service, developer dapat menulis pengujian untuk logika bisnis tanpa harus memikirkan bagaimana data diambil atau disimpan. Dalam Repository, developer dapat menulis pengujian untuk akses data tanpa harus memikirkan bagaimana data tersebut akan digunakan.
+
+4. Mudah dalam mengganti teknologi: Dalam Repository, developer dapat mengganti teknologi yang digunakan untuk akses data tanpa harus merubah logika bisnis dalam Service. Dalam Service, developer dapat mengganti teknologi yang digunakan untuk logika bisnis tanpa harus merubah kode dalam Controller.
+
+Dalam keseluruhan, penggunaan pola Controller-Service-Repository dapat meningkatkan modularitas dan memudahkan pemeliharaan, mengurangi ketergantungan antar bagian kode, dan memudahkan dalam pengujian serta dalam mengganti teknologi yang digunakan dalam aplikasi web.
+
+
+
+
+
+# Documentation
 ## End-point: Login
 ### Method: POST
 >```
