@@ -15,8 +15,14 @@ async function updateTaskService(id, data) {
   return task;
 }
 
+async function deleteTaskService(id) {
+  const task = await taskRepository.deleteTask(id);
+  return task;
+}
+
 module.exports = {
   createTaskService,
   getAllTasksService,
   updateTaskService,
+  deleteTaskService,
 };

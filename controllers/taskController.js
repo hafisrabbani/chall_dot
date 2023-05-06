@@ -47,6 +47,7 @@ const create = async (req, res) => {
 const update = async (req, res) => {
   const { id } = req.params;
   const { category_id, task_name, description } = req.body;
+
   const userId = req.userId;
   if (!category_id || !task_name || !description) {
     return res.status(400).json({
@@ -77,7 +78,32 @@ const update = async (req, res) => {
   return res.status(200).json({
     status: "success",
     data: {
-      task,
+      message: "Task updated",
+    },
+  });
+};
+
+const deleteTask = async (req, res) => {
+  const { id } = req.params;
+  const userId = req.userId;
+  if (!id) {
+    return res.status(400).json({
+      status: "error",
+      message: "Id must be filled",
+    });
+  }
+  const task = await taskService.deleteTaskService(id, userId);
+  if (!task) {
+    return res.status(400).json({
+      status: "error",
+      message: "Failed to delete task",
+    });
+  }
+
+  return res.status(200).json({
+    status: "success",
+    data: {
+      message: "Task deleted",
     },
   });
 };
@@ -86,4 +112,5 @@ module.exports = {
   getAll,
   create,
   update,
+  deleteTask,
 };

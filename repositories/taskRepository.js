@@ -33,7 +33,40 @@ async function createTask(data) {
   }
 }
 
+async function updateTask(id, data) {
+  try {
+    return Task.update(
+      {
+        ...data,
+      },
+      {
+        where: {
+          id,
+        },
+      }
+    );
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
+async function deleteTask(id) {
+  try {
+    return Task.destroy({
+      where: {
+        id,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
 module.exports = {
   getAllTasks,
   createTask,
+  updateTask,
+  deleteTask,
 };
