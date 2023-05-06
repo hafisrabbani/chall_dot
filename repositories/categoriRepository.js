@@ -23,9 +23,6 @@ async function getAllCategories(id_user) {
 
 async function createCategory(name, id_user) {
   try {
-    if (!(await isOwner(id, id_user))) {
-      return false;
-    }
     return Categories.create({
       name,
       user_id: id_user,
@@ -38,9 +35,6 @@ async function createCategory(name, id_user) {
 
 async function deleteCategory(id, id_user) {
   try {
-    if (!(await isOwner(id, id_user))) {
-      return false;
-    }
     return Categories.destroy({
       where: {
         id,

@@ -3,6 +3,7 @@ const userService = require("../services/userService");
 const login = async (req, res) => {
   const { email, password } = req.body;
   const token = await authService.login(email, password);
+  console.log(token);
   if (!token) {
     return res.status(401).json({
       status: "error",
@@ -66,7 +67,13 @@ const register = async (req, res) => {
   return res.status(user?.id ? 201 : 400).json({
     status: user?.id ? "success" : "error",
     message: user?.id ? "User created" : "User not created",
-    data: user,
+    data: {
+      id: user?.id,
+      full_name: user?.full_name,
+      email: user?.email,
+      created_at: user?.created_at,
+      updated_at: user?.updated_at,
+    },
   });
 };
 
