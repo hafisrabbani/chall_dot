@@ -16,3 +16,5 @@ app.use("/task", taskRoutes);
 app.listen(port, () => {
   console.log("Server started on port " + port);
 });
+
+module.exports = { app };
